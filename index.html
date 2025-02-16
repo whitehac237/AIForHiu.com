@@ -6,13 +6,22 @@
 </head>
 <body>
   <h1>AI For Híu</h1>
-  <div class="NTN">
-    <div class="TN">
-    <input type="text" placeholder="Nhập Tin Nhắn" id="message" name="message"  rows="1" oninput="autoResize()"></textarea>
+  <div class="chat-container">
+    <!-- Phần response được chuyển lên trước -->
+    <div id="response" class="response-container"></div>
+    
+    <!-- Phần nhập tin nhắn -->
+    <div class="input-container">
+      <textarea 
+        id="message" 
+        placeholder="Nhập Tin Nhắn" 
+        rows="1"
+        oninput="autoResize()"
+        onkeypress="handleEnter(event)"
+      ></textarea>
+      <button class="send-btn" onclick="callAPI()">Gửi</button>
     </div>
-    <button class="BTG" onclick="callAPI()">Gửi</button>
   </div>
-  <div id="response"></div>
   <script src="script.js"></script>
 </body>
 </html>
